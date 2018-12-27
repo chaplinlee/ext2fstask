@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.13)
+project(fsviewer)
+
+set(CMAKE_C_STANDARD 11)
+
+add_executable(dump_layout dump_layout.c)
+add_executable(dump_del dump_del.c)
+add_executable(dump_undo dump_undo.c)
+add_executable(dump_inode dump_inode.c)
+add_executable(dump_idx dump_idx.c)
+add_executable(fdata_location fdata_location.c)
+add_executable(dump_fdata_ino dump_fdata_ino.c)
+add_executable(dump_dir_entry dump_dir_entry.c)
+add_executable(dump_root_dentry dump_root_dentry.c)
+add_executable(dump_slink dump_slink.c)
+add_executable(dump_hlink dump_hlink.c)
