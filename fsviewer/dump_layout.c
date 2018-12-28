@@ -1,10 +1,76 @@
 #include <stdio.h>
 // not sure about the include path, double check
 // see https://oss.oracle.com/projects/ocfs2/dist/documentation/disklayout.pdf for more
-//#include <linux/fs.h>
+#include <linux/fs.h>
 //#include <fs/ext2/ext2.h>
 //#include <linux/ext2_fs.h>
 
+//static int ext2_fill_super(struct super_block *sb, void *data, int silent){
+//
+//  struct buffer_head * bh;
+//  struct ext2_sb_info * sbi;
+//  struct ext2_super_block * es;
+//  struct inode *root;
+//  unsigned long block;
+//  unsigned long sb_block = get_sb_block(&data);
+//  unsigned long logic_sb_block;
+//  unsigned long offset = 0;
+//  unsigned long def_mount_opts;
+//  long ret = -EINVAL;
+//  //default block size is 1024B
+//  int blocksize = BLOCK_SIZE;
+//  int db_count;
+//  int i, j;
+//  __le32 features;
+//  int err;
+//
+//  //allocate memory ext2_super_block in memory
+//  sbi = kzalloc(sizeof(*sbi), GFP_KERNEL);
+//  if (!sbi)
+//    return -ENOMEM;
+//
+//  sbi->s_blockgroup_lock = kzalloc(sizeof(struct blockgroup_lock), GFP_KERNEL);
+//  if(!sbi->s_blockgroup_lock){
+//    kfree(sbi);
+//    return -ENOMEM;
+//  }
+//
+//  //sb is vfs super_block
+//  //sb->s_fs_info is specific file system super block
+//  sb->s_fs_info = sbi;
+//  sbi->s_sb_lock = sb_block;
+//
+//  spin_lock_init(&sbi->s_lock);
+//  /*
+//  * See what the current blocksize for the device is, and
+//  * use that as the blocksize.  Otherwise (or if the blocksize
+//  * is smaller than the default) use the default.
+//  * This is important for devices that have a hardware
+//  * sectorsize that is larger than the default.
+//  */
+//  blocksize = sb_min_blocksize(sb, BLOCK_SIZE);
+//  if(!blocksize){
+//    ext2_msg(sb, KERN_ERR, "error:unable to set blocksize");
+//    goto failed_sbi;
+//  }
+//  if(blocksize != BLOCK_SIZE){
+//    logic_sb_block = (sb_block * BLOCK_SIZE) / blocksize;
+//    offset = (sb_block * BLOCK_SIZE) % blocksize;
+//  }
+//  else{
+//    logic_sb_block = sb_block;
+//  }
+//
+//  //read block @logic_sb_block contain super block
+//  if(!(bh = sb_bread(sb, logic_sb_block))){
+//    ext2_msg(sb, KERN_ERR, "error:unable to read superblock");
+//    goto failed_sbi;
+//  }
+//
+//  es = (struct ext2_super_block *)(((char *)bh->b_data) + offset);
+//  sbi->s_es = es;
+//
+//}
 
 void dump_layout(char *device_name)
 {

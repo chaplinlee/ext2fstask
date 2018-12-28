@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="fsviewer"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_hlink">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_hlink" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_hlink"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_hlink/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_hlink" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_hlink/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_slink">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_slink" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_slink"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_slink/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_slink" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_slink/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_dir_entry">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_dir_entry" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_dir_entry"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_dir_entry/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_dir_entry" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_dir_entry/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_del">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_del" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_del"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_del/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_del" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_del/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_layout">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_layout" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_layout"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_layout/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_layout" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_layout/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fdata_location">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/fdata_location" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdata_location"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fdata_location/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/fdata_location" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdata_location/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_root_dentry">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_root_dentry" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_root_dentry"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_root_dentry/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_root_dentry" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_root_dentry/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_fdata_ino">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_fdata_ino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_fdata_ino"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_fdata_ino/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_fdata_ino" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_fdata_ino/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_undo">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_undo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_undo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_undo/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_undo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_undo/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_inode">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_inode" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_inode"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_inode/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_inode" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_inode/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_idx">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_idx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_idx"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dump_idx/fast">
+				<Option output="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/dump_idx" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_idx/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/teriyakiii/code/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_del.c">
+			<Option target="dump_del"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_dir_entry.c">
+			<Option target="dump_dir_entry"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_fdata_ino.c">
+			<Option target="dump_fdata_ino"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_hlink.c">
+			<Option target="dump_hlink"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_idx.c">
+			<Option target="dump_idx"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_inode.c">
+			<Option target="dump_inode"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_layout.c">
+			<Option target="dump_layout"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_root_dentry.c">
+			<Option target="dump_root_dentry"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_slink.c">
+			<Option target="dump_slink"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/dump_undo.c">
+			<Option target="dump_undo"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/fdata_location.c">
+			<Option target="fdata_location"/>
+		</Unit>
+		<Unit filename="/home/teriyakiii/code/ext2fstask/fsviewer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/dump_inode.dir/dump_inode.c.o  -o dump_inode 

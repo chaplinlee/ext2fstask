@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/dump_undo.dir/dump_undo.c.o  -o dump_undo 

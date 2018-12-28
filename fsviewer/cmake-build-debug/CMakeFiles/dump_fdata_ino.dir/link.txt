@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/dump_fdata_ino.dir/dump_fdata_ino.c.o  -o dump_fdata_ino 
