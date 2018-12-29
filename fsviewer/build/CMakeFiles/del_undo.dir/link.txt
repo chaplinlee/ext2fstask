@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/del_undo.dir/del_undo.c.o  -o del_undo 

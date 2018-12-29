@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/dump_del.dir/dump_del.c.o  -o dump_del 

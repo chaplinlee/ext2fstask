@@ -1,0 +1,5 @@
+/home/teriyakiii/code/ext2fstask/fsviewer/build/CMakeFiles/edit_cache.dir
+/home/teriyakiii/code/ext2fstask/fsviewer/build/CMakeFiles/del_undo.dir
+/home/teriyakiii/code/ext2fstask/fsviewer/build/CMakeFiles/dump_del.dir
+/home/teriyakiii/code/ext2fstask/fsviewer/build/CMakeFiles/dump_layout.dir
+/home/teriyakiii/code/ext2fstask/fsviewer/build/CMakeFiles/rebuild_cache.dir
