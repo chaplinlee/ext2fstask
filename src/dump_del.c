@@ -5,20 +5,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <ext2fs/ext2_fs.h>
+#include "utils.h"
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
 
 static unsigned int block_size = 0;        /* block size (to be calculated) */
-
-int isPower(int n)
-{
-    int i;
-    int a[12] = { 0, 1, 3, 9, 27, 81, 243, 5, 25, 125, 7, 49 };
-    for (i = 0; i < 12; i++)
-        if (n == a[i])
-            return 1;
-    return 0;
-}
 
 int main(int argc, char * argv[])
 {
@@ -67,7 +58,7 @@ int main(int argc, char * argv[])
     {
         if (i == 0)
             inode_OFFSET = (1 + 1 + 2 + super.s_reserved_gdt_blocks + 1 + 1) * block_size;//268288
-        else if (isPower(i) == 1)
+        else if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
             inode_OFFSET = ((super.s_blocks_per_group * i + 1) + (1 + 2 + super.s_reserved_gdt_blocks + 1 + 1)) * block_size;//268288
         else
             inode_OFFSET = ((super.s_blocks_per_group * i + 1) + (1 + 1)) * block_size;

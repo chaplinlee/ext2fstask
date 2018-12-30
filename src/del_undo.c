@@ -6,20 +6,11 @@
 #include <unistd.h>
 #include <ext2fs/ext2_fs.h>
 #include <string.h>
+#include "utils.h"
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
 
 static unsigned int block_size = 0;        /* block size (to be calculated) */
-
-int isPower(int n)
-{
-  int i;
-  int a[12] = { 0, 1, 3, 9, 27, 81, 243, 5, 25, 125, 7, 49 };
-  for (i = 0; i < 12; i++)
-    if (n == a[i])
-      return 1;
-  return 0;
-}
 
 int main(int argc, char **argv)
 {

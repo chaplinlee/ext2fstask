@@ -6,22 +6,13 @@
 #include <unistd.h>
 #include <ext2fs/ext2_fs.h>
 #include <string.h>
+#include "utils.h"
+
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
 //#define FD_DEVICE "/dev/loop0"               /* the floppy disk device */
 
 static unsigned int block_size = 0;        /* block size (to be calculated) */
-
-//
-int isPower(int n)
-{
-    int i;
-    int a[12] = { 0, 1, 3, 5, 7, 9, 25, 27, 49, 81, 125, 243 };
-    for (i = 0; i < 12; i++)
-        if (n == a[i])
-            return 1;
-    return 0;
-}
 
 int main(int argc, char * argv[])
 {
@@ -84,7 +75,7 @@ int main(int argc, char * argv[])
     for (int i = 0; i < group_num; i++)
     {
         mark = 1 + i * super.s_blocks_per_group;
-        if (isPower(i) == 1)
+        if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
         {
             printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0],i, start, end, lenth);
             a = mark, b = mark + 1 - 1;
