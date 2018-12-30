@@ -66,7 +66,7 @@ int dump_layout(char *device)
         if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
         {
             printf("| %-5s %-11d | %6s | %6s | %6s |\n", table_column[0], i, "Start", "End", "Length");
-            printf("| %-17s | %6s | %6s | %6s |\n", ":----------------", ":----:", ":----:", ":----:");
+            printf("|%-17s|%6s|%6s|%6s|\n", ":------------------", ":------:", ":------:", ":------:");
             a = mark, b = mark + 1 - 1;
             printf("| %-17s | %6d | %6d | %6d |\n", table_column[1], a, b, 1);
             a = b + 1, b = a + GDT_size - 1;
@@ -87,7 +87,7 @@ int dump_layout(char *device)
         else
         {
             printf("| %-5s %-11d | %6s | %6s | %6s |\n", table_column[0], i, "Start", "End", "Length");
-            printf("| %-17s | %6s | %6s | %6s |\n", ":----------------", ":---:", ":-:", ":----:");
+            printf("|%-17s|%6s|%6s|%6s|\n", ":------------------", ":------:", ":------:", ":------:");
             for(int j = 1;j < 4;j++)
                 printf("| %-17s | %6s | %6s | %6s |\n", table_column[j], "N/A", "N/A", "N/A");
 
