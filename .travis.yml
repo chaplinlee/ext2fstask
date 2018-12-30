@@ -12,6 +12,8 @@ script:
   - mkdir build && cd build
   - cmake ..
   - make
+
+after_success:
   # create empty 128M file
   - dd if=/dev/zero of=fs_file count=128 bs=1M
   # create file system on the file
