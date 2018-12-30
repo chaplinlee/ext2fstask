@@ -52,8 +52,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dump_layout.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="89" column="41" lean-forward="true" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
+            <state relative-caret-position="22">
+              <caret line="73" column="16" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="16" />
               <folding>
                 <element signature="e#232#309#0" />
               </folding>
@@ -73,8 +73,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="5">
-    <option name="x" value="66" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="1554" />
     <option name="height" value="1056" />
@@ -85,7 +85,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -97,11 +96,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
+    <property name="last_opened_file_path" value="$USER_HOME$/CLionProjects/untitled/CMakeLists.txt" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -129,17 +129,18 @@
       <updated>1546007380101</updated>
       <workItem from="1546007383534" duration="3155000" />
       <workItem from="1546052325248" duration="1529000" />
+      <workItem from="1546101403130" duration="1962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4684000" />
+    <option name="totallyTimeSpent" value="6646000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="24" width="1554" height="1056" extended-state="5" />
+    <frame x="65" y="24" width="1554" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25431606" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25830013" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -172,14 +173,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/del_undo.c">
+    <entry file="file://$PROJECT_DIR$/dump_del.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dump_del.c">
+    <entry file="file://$PROJECT_DIR$/del_undo.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
@@ -188,8 +189,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dump_layout.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="89" column="41" lean-forward="true" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
+        <state relative-caret-position="22">
+          <caret line="73" column="16" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="16" />
           <folding>
             <element signature="e#232#309#0" />
           </folding>
