@@ -102,6 +102,7 @@ int dump_layout(char *device)
         }
         printf("\n");
     }
+    return 0;
 }
 
 int main(int argc, char **argv)
