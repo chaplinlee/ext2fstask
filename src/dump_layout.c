@@ -36,7 +36,7 @@ int dump_layout(char *device)
     unsigned int block_size = 1024 << super.s_log_block_size;
     int group_num = (super.s_blocks_count - 1) / super.s_blocks_per_group + 1;
     // inode table size in each group
-    int block_inodes_per_group = super.s_inodes_per_group * super.s_inode_size / block_size;
+    int inode_table_blocks = super.s_inodes_per_group * super.s_inode_size / block_size;
     // GDT size in each group
     int GDT_size = sizeof(struct ext2_group_desc) * group_num / block_size + 1;
 
@@ -70,8 +70,8 @@ int dump_layout(char *device)
         block_cursor ++;
         printf("| %-17s | %6d | %6d | %6d |\n", "Inode bitmap", block_cursor, block_cursor, 1);
         block_cursor ++;
-        printf("| %-17s | %6d | %6d | %6d |\n", "Inode table", block_cursor, block_cursor + block_inodes_per_group - 1, block_inodes_per_group);
-        block_cursor += block_inodes_per_group;
+        printf("| %-17s | %6d | %6d | %6d |\n", "Inode table", block_cursor, block_cursor + inode_table_blocks - 1, inode_table_blocks);
+        block_cursor += inode_table_blocks;
         int data_block_end = (group_index + 1) * super.s_blocks_per_group;
         if(data_block_end > super.s_blocks_count - 1)
             data_block_end = super.s_blocks_count - 1;
