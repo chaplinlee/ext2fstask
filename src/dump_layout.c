@@ -13,16 +13,16 @@
 
 int dump_layout(char *device)
 {
-    struct ext2_super_block super;
-    int fd;
-
-    // read super-block
+    int fd = -1;
+    // open device
     if ((fd = open(device, O_RDONLY)) < 0) {
         fprintf(stderr, "Cannot open device %s", device);
         return 1;
     }
 
-    // read super-block
+    // read superblock
+    struct ext2_super_block super;
+    // offset to the superblock
     lseek(fd, BASE_OFFSET, SEEK_SET);
     read(fd, &super, sizeof(super));
     close(fd);
