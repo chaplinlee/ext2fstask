@@ -12,6 +12,11 @@ script:
   - mkdir build && cd build
   - cmake ..
   - make
+  # create empty 128M file
+  - dd if=/dev/zero of=fs_file count=128 bs=1M
+  # create file system on the file
+  - mke2fs fs_file
+  - dump_layout fs_file
 
 notifications:
   email: false
