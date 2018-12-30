@@ -9,8 +9,7 @@
 #include "utils.h"
 
 
-#define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
-static unsigned int block_size = 0;        /* block size (to be calculated) */
+#define BASE_OFFSET 1024                   // locates beginning of the super block (first group)
 
 int dump_layout(char *device)
 {
@@ -33,7 +32,8 @@ int dump_layout(char *device)
         fprintf(stderr, "Not a Ext2 filesystem\n");
         return 1;
     }
-    block_size = 1024 << super.s_log_block_size;
+
+    unsigned int block_size = 1024 << super.s_log_block_size;
 
     /*
     ext2_super_block
