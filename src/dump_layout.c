@@ -60,6 +60,7 @@ int dump_layout(char *device)
     char *placeholder = "------";
     char *table_column[] = {"Group", "Superblock", "GDT", "Reserved GDT",
                             "Data block bitmap", "Inode bitmap", "Inode table", "Data block"};
+    // print out required message
     for (int i = 0; i < group_num; i++)
     {
         mark = 1 + i * super.s_blocks_per_group;
