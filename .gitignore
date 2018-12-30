@@ -54,3 +54,4 @@ dkms.conf
 .idea
 build/
 cmake-build-*
+*.swp
