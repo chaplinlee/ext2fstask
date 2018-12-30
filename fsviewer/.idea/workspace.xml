@@ -9,12 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7db1028-176b-4f62-bb8c-af673d9f6093" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.dump_layout2.cpp.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/del_undo.c" beforeDir="false" afterPath="$PROJECT_DIR$/del_undo.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump_del.c" beforeDir="false" afterPath="$PROJECT_DIR$/dump_del.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump_layout.c" beforeDir="false" afterPath="$PROJECT_DIR$/dump_layout.c" afterDir="false" />
-    </list>
+    <list default="true" id="b7db1028-176b-4f62-bb8c-af673d9f6093" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,21 +40,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dump_del.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+            <state relative-caret-position="652">
+              <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-636" />
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dump_layout.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1071">
+            <state relative-caret-position="-1260">
               <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
             </state>
           </provider>
@@ -141,12 +138,12 @@
       <workItem from="1546007383534" duration="3155000" />
       <workItem from="1546052325248" duration="1529000" />
       <workItem from="1546101403130" duration="3248000" />
-      <workItem from="1546180504552" duration="6255000" />
+      <workItem from="1546180504552" duration="7802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14187000" />
+    <option name="totallyTimeSpent" value="15734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1731" height="1056" extended-state="0" />
@@ -195,16 +192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.c">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dump_del.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="72" column="56" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/del_undo.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
@@ -214,9 +201,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dump_layout.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1071">
+        <state relative-caret-position="-1260">
           <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dump_del.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-636" />
       </provider>
     </entry>
   </component>

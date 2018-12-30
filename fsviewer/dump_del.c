@@ -78,7 +78,19 @@ int main(int argc, char * argv[])
         {
             read(fd, &inode, sizeof(inode));
             if (inode.i_dtime != 0)
+            {
+                const long i_dtime = (const long)inode.i_dtime;
+                struct tm *tm_time = localtime(&i_dtime);
+                char str_buffer[1024];
+                strftime(str_buffer, sizeof(str_buffer), "%a, %d %b %Y %T %z", tm_time);
+
+                printf("group %d\n",i);
+                printf("deleted inode time:%u\n",inode.i_dtime);
+                printf("deleted inode time:%s\n",str_buffer);
+
                 delete_num++;
+            }
+
             check_num++;
         }
     }
