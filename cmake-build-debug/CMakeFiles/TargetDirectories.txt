@@ -1,5 +1,0 @@
-/Users/ryan/Desktop/ext2fstask/cmake-build-debug/CMakeFiles/del_undo.dir
-/Users/ryan/Desktop/ext2fstask/cmake-build-debug/CMakeFiles/dump_del.dir
-/Users/ryan/Desktop/ext2fstask/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/ryan/Desktop/ext2fstask/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/ryan/Desktop/ext2fstask/cmake-build-debug/CMakeFiles/dump_layout.dir
