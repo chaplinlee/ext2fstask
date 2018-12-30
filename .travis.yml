@@ -1,0 +1,17 @@
+language: cpp
+
+compiler:
+  - clang
+  - gcc
+
+install:
+  - sudo apt-get install e2fslibs-dev
+
+script:
+  - cmake --version
+  - mkdir build && cd build
+  - cmake ..
+  - make
+
+notifications:
+  email: false
