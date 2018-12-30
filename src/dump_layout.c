@@ -65,40 +65,42 @@ int dump_layout(char *device)
         mark = 1 + i * super.s_blocks_per_group;
         if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
         {
-            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, "Start", "End", "Length");
+            printf("| %-5s %-11d | %6s | %6s | %6s |\n", table_column[0], i, "Start", "End", "Length");
+            printf("| %-17s | %6s | %6s | %6s |\n", ":----------------", ":----:", ":----:", ":----:");
             a = mark, b = mark + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[1], a, b, 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[1], a, b, 1);
             a = b + 1, b = a + GDT_size - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[2], a, b, GDT_size);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[2], a, b, GDT_size);
             a = b + 1, b = a + super.s_reserved_gdt_blocks - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[3], a, b, super.s_reserved_gdt_blocks);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[3], a, b, super.s_reserved_gdt_blocks);
             a = b + 1, b = a + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[4], a, b, 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[4], a, b, 1);
             a = b + 1, b = a + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[5], a, b, 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[5], a, b, 1);
             a = b + 1, b = a + block_inodes_per_group - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[6], a, b, block_inodes_per_group);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[6], a, b, block_inodes_per_group);
             a = b + 1, b = mark + super.s_blocks_per_group - 1;
             if (b > super.s_blocks_count - 1)
                 b = super.s_blocks_count - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[7], a, b, b - a + 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[7], a, b, b - a + 1);
         }
         else
         {
-            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, "Start", "End", "Length");
+            printf("| %-5s %-11d | %6s | %6s | %6s |\n", table_column[0], i, "Start", "End", "Length");
+            printf("| %-17s | %6s | %6s | %6s |\n", ":----------------", ":---:", ":-:", ":----:");
             for(int j = 1;j < 4;j++)
-                printf("%-17s:|%6s|%6s|%6s|\n", table_column[j], "------", "------", "------");
+                printf("| %-17s | %6s | %6s | %6s |\n", table_column[j], "N/A", "N/A", "N/A");
 
             a = mark, b = mark + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[4], a, b, 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[4], a, b, 1);
             a = b + 1, b = a + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[5], a, b, 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[5], a, b, 1);
             a = b + 1, b = a + block_inodes_per_group - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[6], a, b, block_inodes_per_group);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[6], a, b, block_inodes_per_group);
             a = b + 1, b = mark + super.s_blocks_per_group - 1;
             if (b > super.s_blocks_count - 1)
                 b = super.s_blocks_count - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[7], a, b, b - a + 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", table_column[7], a, b, b - a + 1);
         }
         printf("\n");
     }
