@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/dump_idx.dir/dump_idx.c.o  -o dump_idx 

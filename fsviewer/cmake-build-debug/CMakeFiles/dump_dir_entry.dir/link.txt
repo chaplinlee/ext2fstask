@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/dump_dir_entry.dir/dump_dir_entry.c.o  -o dump_dir_entry 

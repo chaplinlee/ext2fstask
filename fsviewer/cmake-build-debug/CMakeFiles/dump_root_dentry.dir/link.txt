@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/dump_root_dentry.dir/dump_root_dentry.c.o  -o dump_root_dentry 

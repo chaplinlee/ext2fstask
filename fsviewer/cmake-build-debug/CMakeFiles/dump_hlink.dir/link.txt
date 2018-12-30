@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/dump_hlink.dir/dump_hlink.c.o  -o dump_hlink 
