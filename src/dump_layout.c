@@ -34,31 +34,12 @@ int dump_layout(char *device)
     }
 
     unsigned int block_size = 1024 << super.s_log_block_size;
-
-    /*
-    ext2_super_block
-    super.s_blocks_per_group       块组大小（块）
-    super.s_reserved_gdt_blocks    reserved_GDT大小
-    super.s_inodes_per_group       每组节点数
-    super.s_inode_size             节点大小（字节）
-    */
-
     int group_num = (super.s_blocks_count - 1) / super.s_blocks_per_group + 1;
-    struct ext2_inode inode;
-
-    int a, b;   //visiting cursor
-    int mark = 1;   //visiting mark
-
-    // 每个块组中 inode table 所占的块数
+    // inode table size in each group
     int block_inodes_per_group = super.s_inodes_per_group * super.s_inode_size / block_size;
+    // GDT size in each group
+    int GDT_size = sizeof(struct ext2_group_desc) * group_num / block_size + 1;
 
-    // GDT所占的块数
-    struct ext2_group_desc group_desc;
-    int GDT_size = sizeof(group_desc) * group_num / block_size + 1;
-
-    // 依次访问每个块组
-    char *table_column[] = {"Group", "Superblock", "GDT", "Reserved GDT",
-                            "Data block bitmap", "Inode bitmap", "Inode table", "Data block"};
     // print out required message
     for (int group_index = 0; group_index < group_num; group_index++)
     {
