@@ -36,22 +36,23 @@ int dump_del(char *device)
     int group_num = (super.s_blocks_count - 1) / super.s_blocks_per_group + 1;
 
     struct ext2_inode inode;
-    int i, j, delete_num = 0, check_num = 0;
-    int inode_OFFSET = 0;
+    int delete_num = 0, check_num = 0;
+    int inode_offset = 0;
 
-    // 依次访问每个块组
-    for (i = 0; i < group_num; i++)
+    // iterate over the group and search inode table
+    for (int group_index = 0; group_index < group_num; group_index++)
     {
-        if (i == 0)
-            inode_OFFSET = (1 + 1 + 2 + super.s_reserved_gdt_blocks + 1 + 1) * block_size;//268288
-        else if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
-            inode_OFFSET = ((super.s_blocks_per_group * i + 1) + (1 + 2 + super.s_reserved_gdt_blocks + 1 + 1)) * block_size;//268288
+        // find offset to inode table
+        if (group_index == 0)
+            inode_offset = (1 + 1 + 2 + super.s_reserved_gdt_blocks + 1 + 1) * block_size; //268288
+        else if (is_power(group_index, 3) || is_power(group_index, 5) || is_power(group_index, 7))
+            inode_offset = ((super.s_blocks_per_group * group_index + 1) + (1 + 2 + super.s_reserved_gdt_blocks + 1 + 1)) * block_size;//268288
         else
-            inode_OFFSET = ((super.s_blocks_per_group * i + 1) + (1 + 1)) * block_size;
+            inode_offset = ((super.s_blocks_per_group * group_index + 1) + (1 + 1)) * block_size;
 
-        //定位到 inode table 读出删除时间
-        lseek(fd, inode_OFFSET, SEEK_SET);
-        for (j = 0; j < 2032; j++)
+        // read inode table
+        lseek(fd, inode_offset, SEEK_SET);
+        for (int j = 0; j < 2032; j++) // question: what is 2032?
         {
             read(fd, &inode, sizeof(inode));
             if (inode.i_dtime != 0)
