@@ -60,48 +60,41 @@ int dump_layout(char *device)
     char *table_column[] = {"Group", "Superblock", "GDT", "Reserved GDT",
                             "Data block bitmap", "Inode bitmap", "Inode table", "Data block"};
     // print out required message
-    for (int i = 0; i < group_num; i++)
+    for (int group_index = 0; group_index < group_num; group_index++)
     {
-        mark = 1 + i * super.s_blocks_per_group;
-        if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
+        int block_cursor = group_index * super.s_blocks_per_group + 1;
+
+        // print header
+        printf("| %-5s %-11d | %6s | %6s | %6s |\n", "Group", group_index, "Start", "End", "Length");
+        printf("|%-17s|%6s|%6s|%6s|\n", ":------------------", ":------:", ":------:", ":------:");
+
+        // special items (Superblock / GDP / Reserved GDT) may not appear in certain groups
+        // this group contains backup superblock
+        if(is_power(group_index, 3) || is_power(group_index, 5) || is_power(group_index, 7))
         {
-            printf("| %-5s %-11d | %6s | %6s | %6s |\n", table_column[0], i, "Start", "End", "Length");
-            printf("|%-17s|%6s|%6s|%6s|\n", ":------------------", ":------:", ":------:", ":------:");
-            a = mark, b = mark + 1 - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[1], a, b, 1);
-            a = b + 1, b = a + GDT_size - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[2], a, b, GDT_size);
-            a = b + 1, b = a + super.s_reserved_gdt_blocks - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[3], a, b, super.s_reserved_gdt_blocks);
-            a = b + 1, b = a + 1 - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[4], a, b, 1);
-            a = b + 1, b = a + 1 - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[5], a, b, 1);
-            a = b + 1, b = a + block_inodes_per_group - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[6], a, b, block_inodes_per_group);
-            a = b + 1, b = mark + super.s_blocks_per_group - 1;
-            if (b > super.s_blocks_count - 1)
-                b = super.s_blocks_count - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[7], a, b, b - a + 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", "Superblock", block_cursor, block_cursor, 1);
+            block_cursor ++;
+            printf("| %-17s | %6d | %6d | %6d |\n", "GDT", block_cursor, block_cursor, GDT_size);
+            block_cursor += GDT_size;
+            printf("| %-17s | %6d | %6d | %6d |\n", "Reserved GDT", block_cursor, block_cursor, super.s_reserved_gdt_blocks);
+            block_cursor += super.s_reserved_gdt_blocks;
         }
         else
         {
-            printf("| %-5s %-11d | %6s | %6s | %6s |\n", table_column[0], i, "Start", "End", "Length");
-            printf("|%-17s|%6s|%6s|%6s|\n", ":------------------", ":------:", ":------:", ":------:");
-            for(int j = 1;j < 4;j++)
-                printf("| %-17s | %6s | %6s | %6s |\n", table_column[j], "N/A", "N/A", "N/A");
-
-            a = mark, b = mark + 1 - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[4], a, b, 1);
-            a = b + 1, b = a + 1 - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[5], a, b, 1);
-            a = b + 1, b = a + block_inodes_per_group - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[6], a, b, block_inodes_per_group);
-            a = b + 1, b = mark + super.s_blocks_per_group - 1;
-            if (b > super.s_blocks_count - 1)
-                b = super.s_blocks_count - 1;
-            printf("| %-17s | %6d | %6d | %6d |\n", table_column[7], a, b, b - a + 1);
+            printf("| %-17s | %6s | %6s | %6s |\n", "Superblock", "N/A", "N/A", "N/A");
+            printf("| %-17s | %6s | %6s | %6s |\n", "GDT", "N/A", "N/A", "N/A");
+            printf("| %-17s | %6s | %6s | %6s |\n", "Reserved GDT", "N/A", "N/A", "N/A");
         }
+        printf("| %-17s | %6d | %6d | %6d |\n", "Data block bitmap", block_cursor, block_cursor, 1);
+        block_cursor ++;
+        printf("| %-17s | %6d | %6d | %6d |\n", "Inode bitmap", block_cursor, block_cursor, 1);
+        block_cursor ++;
+        printf("| %-17s | %6d | %6d | %6d |\n", "Inode table", block_cursor, block_cursor + block_inodes_per_group - 1, block_inodes_per_group);
+        block_cursor += block_inodes_per_group;
+        int data_block_end = (group_index + 1) * super.s_blocks_per_group;
+        if(data_block_end > super.s_blocks_count - 1)
+            data_block_end = super.s_blocks_count - 1;
+        printf("| %-17s | %6d | %6d | %6d |\n", "Data block", block_cursor, data_block_end, data_block_end - block_cursor + 1);
         printf("\n");
     }
     return 0;
