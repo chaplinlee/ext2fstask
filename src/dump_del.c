@@ -34,6 +34,8 @@ int dump_del(char *device)
     unsigned int block_size = 1024 << super.s_log_block_size;
     // number of block groups
     int group_num = (super.s_blocks_count - 1) / super.s_blocks_per_group + 1;
+    // inode table size in each group
+    int inode_table_blocks = super.s_inodes_per_group * super.s_inode_size / block_size;
 
     struct ext2_inode inode;
     int delete_num = 0, check_num = 0;
@@ -52,7 +54,7 @@ int dump_del(char *device)
 
         // read inode table
         lseek(fd, inode_offset, SEEK_SET);
-        for (int j = 0; j < 2032; j++) // question: what is 2032?
+        for (int inode_index = 0; inode_index < inode_table_blocks; inode_index++)
         {
             read(fd, &inode, sizeof(inode));
             if (inode.i_dtime != 0)
