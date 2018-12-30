@@ -65,7 +65,7 @@ int dump_layout(char *device)
         mark = 1 + i * super.s_blocks_per_group;
         if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
         {
-            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0],i, "Start", "End", "Length");
+            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, "Start", "End", "Length");
             a = mark, b = mark + 1 - 1;
             printf("%-17s:|%6d|%6d|%6d|\n", table_column[1], a, b, 1);
             a = b + 1, b = a + GDT_size - 1;
