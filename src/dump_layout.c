@@ -10,19 +10,16 @@
 
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
-
 static unsigned int block_size = 0;        /* block size (to be calculated) */
 
-int main(int argc, char * argv[])
+void dump_layout(char *device)
 {
-    char * FD_DEVICE = argv[1];
-
     struct ext2_super_block super;
     int fd;
 
     // read super-block
-    if ((fd = open(FD_DEVICE, O_RDONLY)) < 0) {
-        perror(FD_DEVICE);
+    if ((fd = open(device, O_RDONLY)) < 0) {
+        perror(device);
         exit(1);  /* error while opening the floppy device */
     }
 
@@ -108,6 +105,15 @@ int main(int argc, char * argv[])
         }
         printf("\n");
     }
+}
 
-    exit(0);
+int main(int argc, char **argv)
+{
+    if(argc < 2)
+    {
+        fprintf(stderr, "Not enough argument.\n\nUsage: %s [device]", argv[0]);
+        return 1;
+    }
+    dump_layout(argv[1]);
+    return 0;
 }
