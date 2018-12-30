@@ -48,6 +48,7 @@ int main(int argc, char **argv)
 
     block_size = 1024 << super.s_log_block_size;
 
+    /*
     for(int i = 0; i < group_num; i++)
     {
         if (i == 0)
@@ -61,5 +62,5 @@ int main(int argc, char **argv)
 
 
     }
-
+    */
 }
