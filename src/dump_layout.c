@@ -12,15 +12,15 @@
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
 static unsigned int block_size = 0;        /* block size (to be calculated) */
 
-void dump_layout(char *device)
+int dump_layout(char *device)
 {
     struct ext2_super_block super;
     int fd;
 
     // read super-block
     if ((fd = open(device, O_RDONLY)) < 0) {
-        perror(device);
-        exit(1);  /* error while opening the floppy device */
+        fprintf(stderr, "Cannot open device %s", device);
+        return 1;
     }
 
     // read super-block
@@ -31,7 +31,7 @@ void dump_layout(char *device)
     // is ext2 func
     if (super.s_magic != EXT2_SUPER_MAGIC) {
         fprintf(stderr, "Not a Ext2 filesystem\n");
-        exit(1);
+        return 1;
     }
     block_size = 1024 << super.s_log_block_size;
 
@@ -114,6 +114,5 @@ int main(int argc, char **argv)
         fprintf(stderr, "Not enough argument.\n\nUsage: %s [device]", argv[0]);
         return 1;
     }
-    dump_layout(argv[1]);
-    return 0;
+    return dump_layout(argv[1]);
 }
