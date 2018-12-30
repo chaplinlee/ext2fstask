@@ -57,7 +57,6 @@ int dump_layout(char *device)
     int GDT_size = sizeof(group_desc) * group_num / block_size + 1;
 
     // 依次访问每个块组
-    char *placeholder = "------";
     char *table_column[] = {"Group", "Superblock", "GDT", "Reserved GDT",
                             "Data block bitmap", "Inode bitmap", "Inode table", "Data block"};
     // print out required message
@@ -88,7 +87,7 @@ int dump_layout(char *device)
         {
             printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, "Start", "End", "Length");
             for(int j = 1;j < 4;j++)
-                printf("%-17s:|%6s|%6s|%6s|\n", table_column[j], placeholder, placeholder, placeholder);
+                printf("%-17s:|%6s|%6s|%6s|\n", table_column[j], "------", "------", "------");
 
             a = mark, b = mark + 1 - 1;
             printf("%-17s:|%6d|%6d|%6d|\n", table_column[4], a, b, 1);
