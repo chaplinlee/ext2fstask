@@ -66,13 +66,12 @@ int dump_del(char *device)
 
                 printf("group %d\n", group_index);
                 printf("deleted inode time:%s\n",str_buffer);
-
                 delete_num++;
             }
             check_num++;
         }
     }
-    printf("检查文件节点数：%d\n 被删除节点数：%d\n", check_num, delete_num);
+    printf("Total checked: %d\nTotal deleted: %d\n", check_num, delete_num);
     close(fd);
     return 0;
 }
