@@ -61,8 +61,9 @@ int main(int argc, char * argv[])
 
     int group_num = (super.s_blocks_count - 1) / super.s_blocks_per_group + 1;
     struct ext2_inode inode;
-    int i, j, a, b, delete_num = 0, check_num = 0;
-    int mark = 1;  //访问标记
+
+    int a, b;   //visiting cursor
+    int mark = 1;   //visiting mark
 
     // 每个块组中 inode table 所占的块数
     int block_inodes_per_group = super.s_inodes_per_group*super.s_inode_size / block_size;
@@ -80,7 +81,7 @@ int main(int argc, char * argv[])
     char *placeholder = "------";
     char *table_column[] = {"Group", "Superblock", "GDT", "Reserved GDT",
                             "Data block bitmap", "Inode bitmap", "Inode table", "Data block"};
-    for (i = 0; i < group_num; i++)
+    for (int i = 0; i < group_num; i++)
     {
         mark = 1 + i * super.s_blocks_per_group;
         if (isPower(i) == 1)
@@ -107,9 +108,8 @@ int main(int argc, char * argv[])
         {
 
             printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, start, end, lenth);
-            printf("%-17s:|%6s|%6s|%6s|\n", table_column[1], placeholder,placeholder,placeholder);
-            printf("%-17s:|%6s|%6s|%6s|\n", table_column[2], placeholder,placeholder,placeholder);
-            printf("%-17s:|%6s|%6s|%6s|\n", table_column[3], placeholder,placeholder,placeholder);
+            for(int j = 1;j < 4;j++)
+                printf("%-17s:|%6s|%6s|%6s|\n", table_column[j], placeholder,placeholder,placeholder);
 
             a = mark, b = mark + 1 - 1;
             printf("%-17s:|%6d|%6d|%6d|\n", table_column[4], a, b, 1);
