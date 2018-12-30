@@ -16,7 +16,7 @@ script:
   - dd if=/dev/zero of=fs_file count=128 bs=1M
   # create file system on the file
   - mkfs.ext2 -b 1024 -F fs_file
-  - dump_layout fs_file
+  - ./dump_layout ./fs_file
 
 notifications:
   email: false
