@@ -9,7 +9,7 @@
 #include "utils.h"
 
 
-#define BASE_OFFSET 1024                   // locates beginning of the super block (first group)
+#define BASE_OFFSET 1024 // locates beginning of the super block (first group)
 
 int dump_layout(char *device)
 {
