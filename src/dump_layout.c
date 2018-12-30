@@ -10,7 +10,6 @@
 
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
-//#define FD_DEVICE "/dev/loop0"               /* the floppy disk device */
 
 static unsigned int block_size = 0;        /* block size (to be calculated) */
 
@@ -21,16 +20,13 @@ int main(int argc, char * argv[])
     struct ext2_super_block super;
     int fd;
 
-
-    /* read super-block */
-
+    // read super-block
     if ((fd = open(FD_DEVICE, O_RDONLY)) < 0) {
         perror(FD_DEVICE);
         exit(1);  /* error while opening the floppy device */
     }
 
-    /* read super-block */
-
+    // read super-block
     lseek(fd, BASE_OFFSET, SEEK_SET);
     read(fd, &super, sizeof(super));
     close(fd);
@@ -62,8 +58,6 @@ int main(int argc, char * argv[])
     // GDT所占的块数
     struct ext2_group_desc group_desc;
     int GDT_size = sizeof(group_desc)*group_num / block_size + 1;
-
-    printf("\n dump_layout: \n\n");
 
     // 依次访问每个块组
     char *start = "start";
@@ -97,7 +91,6 @@ int main(int argc, char * argv[])
         }
         else
         {
-
             printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, start, end, lenth);
             for(int j = 1;j < 4;j++)
                 printf("%-17s:|%6s|%6s|%6s|\n", table_column[j], placeholder,placeholder,placeholder);
