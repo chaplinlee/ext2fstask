@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="del_undo">
-				<Option output="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/del_undo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option output="/Users/ryan/Desktop/ext2fstask/cmake-build-debug/del_undo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -33,15 +33,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 del_undo"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 del_undo"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="del_undo/fast">
-				<Option output="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/del_undo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option output="/Users/ryan/Desktop/ext2fstask/cmake-build-debug/del_undo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,15 +55,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 del_undo/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 del_undo/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dump_del">
-				<Option output="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/dump_del" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option output="/Users/ryan/Desktop/ext2fstask/cmake-build-debug/dump_del" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,15 +77,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_del"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_del"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dump_del/fast">
-				<Option output="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/dump_del" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option output="/Users/ryan/Desktop/ext2fstask/cmake-build-debug/dump_del" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -99,35 +99,35 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_del/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_del/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dump_layout">
-				<Option output="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/dump_layout" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option output="/Users/ryan/Desktop/ext2fstask/cmake-build-debug/dump_layout" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -141,15 +141,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_layout"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_layout"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dump_layout/fast">
-				<Option output="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/dump_layout" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug"/>
+				<Option output="/Users/ryan/Desktop/ext2fstask/cmake-build-debug/dump_layout" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ryan/Desktop/ext2fstask/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -163,23 +163,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_layout/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 dump_layout/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/ryan/Desktop/ext2fstask/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/ryan/Desktop/ext2fstask/fsviewer/del_undo.c">
+		<Unit filename="/Users/ryan/Desktop/ext2fstask/del_undo.c">
 			<Option target="del_undo"/>
 		</Unit>
-		<Unit filename="/Users/ryan/Desktop/ext2fstask/fsviewer/dump_del.c">
+		<Unit filename="/Users/ryan/Desktop/ext2fstask/dump_del.c">
 			<Option target="dump_del"/>
 		</Unit>
-		<Unit filename="/Users/ryan/Desktop/ext2fstask/fsviewer/dump_layout.c">
+		<Unit filename="/Users/ryan/Desktop/ext2fstask/dump_layout.c">
 			<Option target="dump_layout"/>
 		</Unit>
-		<Unit filename="/Users/ryan/Desktop/ext2fstask/fsviewer/CMakeLists.txt">
+		<Unit filename="/Users/ryan/Desktop/ext2fstask/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

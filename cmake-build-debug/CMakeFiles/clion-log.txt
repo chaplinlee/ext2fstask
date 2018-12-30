@@ -1,4 +1,4 @@
-"/Users/ryan/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.4886.39/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ryan/Desktop/ext2fstask/fsviewer
+"/Users/ryan/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/183.4886.39/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/ryan/Desktop/ext2fstask
 -- The C compiler identification is AppleClang 10.0.0.10001044
 -- The CXX compiler identification is AppleClang 10.0.0.10001044
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
@@ -15,4 +15,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug
+-- Build files have been written to: /Users/ryan/Desktop/ext2fstask/cmake-build-debug

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/ryan/Desktop/ext2fstask/fsviewer/dump_del.c" "/Users/ryan/Desktop/ext2fstask/fsviewer/cmake-build-debug/CMakeFiles/dump_del.dir/dump_del.c.o"
+  "/Users/ryan/Desktop/ext2fstask/dump_del.c" "/Users/ryan/Desktop/ext2fstask/cmake-build-debug/CMakeFiles/dump_del.dir/dump_del.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 
