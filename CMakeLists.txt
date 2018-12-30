@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5.1)
-project(fsviewer)
+cmake_minimum_required(VERSION 3.5)
+project(ext2fstask)
 
 set(CMAKE_C_STANDARD 11)
 
