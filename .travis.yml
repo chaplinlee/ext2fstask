@@ -18,8 +18,9 @@ after_success:
   - dd if=/dev/zero of=fs_file count=128 bs=1M
   # create file system on the file
   - mkfs.ext2 -b 1024 -F fs_file
-  - ./dump_layout ./fs_file
-  - ./dump_del ./fs_file
+  - sudo losetup -f /dev/loop0 fs_file
+  - sudo ./dump_layout /dev/loop0
+  - sudo ./dump_del /dev/loop0
 
 notifications:
   email: false
