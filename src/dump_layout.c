@@ -27,7 +27,7 @@ int dump_layout(char *device)
     read(fd, &super, sizeof(super));
     close(fd);
 
-    // is ext2 func
+    // check if it is ext2 filesystem
     if (super.s_magic != EXT2_SUPER_MAGIC) {
         fprintf(stderr, "Not a Ext2 filesystem\n");
         return 1;
