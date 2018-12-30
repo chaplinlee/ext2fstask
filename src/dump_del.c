@@ -10,44 +10,29 @@
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
 
-static unsigned int block_size = 0;        /* block size (to be calculated) */
-
-int main(int argc, char * argv[])
+int dump_del(char *device)
 {
-    char *FD_DEVICE = argv[1];
+    int fd = -1;
 
-    struct ext2_super_block super;
-    int fd;
-
-
-    // open文件 打开失败检测
-
-    if ((fd = open(FD_DEVICE, O_RDONLY)) < 0) {
-      perror(FD_DEVICE);
-      exit(1);  /* error while opening the floppy device */
+    // open device file
+    if ((fd = open(device, O_RDONLY)) < 0) {
+        fprintf(stderr, "Cannot open device %s", device);
+        return 1;
     }
 
     // read super_block
-
+    struct ext2_super_block super;
     lseek(fd, BASE_OFFSET, SEEK_SET);
     read(fd, &super, sizeof(super));
 
-    // 检测文件系统
+    // check if it is ext2 filesystem
     if (super.s_magic != EXT2_SUPER_MAGIC) {
         fprintf(stderr, "Not a Ext2 filesystem\n");
-        exit(1);
+        return 1;
     }
 
-    block_size = 1024 << super.s_log_block_size;
-
-      /*
-      ext2_inode
-          i_ctime 创建时间
-          i_dtime 删除时间
-          i_size  文件长度（字节）
-      */
-
-    //number of block groups
+    unsigned int block_size = 1024 << super.s_log_block_size;
+    // number of block groups
     int group_num = (super.s_blocks_count - 1) / super.s_blocks_per_group + 1;
 
     struct ext2_inode inode;
@@ -82,12 +67,20 @@ int main(int argc, char * argv[])
 
                 delete_num++;
             }
-
             check_num++;
         }
     }
     printf("检查文件节点数：%d\n 被删除节点数：%d\n", check_num, delete_num);
-
     close(fd);
-    exit(0);
+    return 0;
+}
+
+int main(int argc, char * argv[])
+{
+    if(argc < 2)
+    {
+        fprintf(stderr, "Not enough argument.\n\nUsage: %s [device]", argv[0]);
+        return 1;
+    }
+    return dump_del(argv[1]);
 }
