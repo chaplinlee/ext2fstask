@@ -57,9 +57,6 @@ int dump_layout(char *device)
     int GDT_size = sizeof(group_desc) * group_num / block_size + 1;
 
     // 依次访问每个块组
-    char *start = "start";
-    char *end = "end";
-    char *lenth = "lenth";
     char *placeholder = "------";
     char *table_column[] = {"Group", "Superblock", "GDT", "Reserved GDT",
                             "Data block bitmap", "Inode bitmap", "Inode table", "Data block"};
@@ -68,7 +65,7 @@ int dump_layout(char *device)
         mark = 1 + i * super.s_blocks_per_group;
         if (is_power(i, 3) || is_power(i, 5) || is_power(i, 7))
         {
-            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0],i, start, end, lenth);
+            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0],i, "Start", "End", "Length");
             a = mark, b = mark + 1 - 1;
             printf("%-17s:|%6d|%6d|%6d|\n", table_column[1], a, b, 1);
             a = b + 1, b = a + GDT_size - 1;
@@ -88,7 +85,7 @@ int dump_layout(char *device)
         }
         else
         {
-            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, start, end, lenth);
+            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, "Start", "End", "Length");
             for(int j = 1;j < 4;j++)
                 printf("%-17s:|%6s|%6s|%6s|\n", table_column[j], placeholder,placeholder,placeholder);
 
