@@ -1,93 +1,91 @@
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <stdio.h>
-// not sure about the include path, double check
-// see https://oss.oracle.com/projects/ocfs2/dist/documentation/disklayout.pdf for more
-#include <linux/fs.h>
-#include <linux/ext2_fs.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <ext2fs/ext2_fs.h>
+#include <string.h>
 
-//static int ext2_fill_super(struct super_block *sb, void *data, int silent){
-//
-//  struct buffer_head * bh;
-//  struct ext2_sb_info * sbi;
-//  struct ext2_super_block * es;
-//  struct inode *root;
-//  unsigned long block;
-//  unsigned long sb_block = get_sb_block(&data);
-//  unsigned long logic_sb_block;
-//  unsigned long offset = 0;
-//  unsigned long def_mount_opts;
-//  long ret = -EINVAL;
-//  //default block size is 1024B
-//  int blocksize = BLOCK_SIZE;
-//  int db_count;
-//  int i, j;
-//  __le32 features;
-//  int err;
-//
-//  //allocate memory ext2_super_block in memory
-//  sbi = kzalloc(sizeof(*sbi), GFP_KERNEL);
-//  if (!sbi)
-//    return -ENOMEM;
-//
-//  sbi->s_blockgroup_lock = kzalloc(sizeof(struct blockgroup_lock), GFP_KERNEL);
-//  if(!sbi->s_blockgroup_lock){
-//    kfree(sbi);
-//    return -ENOMEM;
-//  }
-//
-//  //sb is vfs super_block
-//  //sb->s_fs_info is specific file system super block
-//  sb->s_fs_info = sbi;
-//  sbi->s_sb_lock = sb_block;
-//
-//  spin_lock_init(&sbi->s_lock);
-//  /*
-//  * See what the current blocksize for the device is, and
-//  * use that as the blocksize.  Otherwise (or if the blocksize
-//  * is smaller than the default) use the default.
-//  * This is important for devices that have a hardware
-//  * sectorsize that is larger than the default.
-//  */
-//  blocksize = sb_min_blocksize(sb, BLOCK_SIZE);
-//  if(!blocksize){
-//    ext2_msg(sb, KERN_ERR, "error:unable to set blocksize");
-//    goto failed_sbi;
-//  }
-//  if(blocksize != BLOCK_SIZE){
-//    logic_sb_block = (sb_block * BLOCK_SIZE) / blocksize;
-//    offset = (sb_block * BLOCK_SIZE) % blocksize;
-//  }
-//  else{
-//    logic_sb_block = sb_block;
-//  }
-//
-//  //read block @logic_sb_block contain super block
-//  if(!(bh = sb_bread(sb, logic_sb_block))){
-//    ext2_msg(sb, KERN_ERR, "error:unable to read superblock");
-//    goto failed_sbi;
-//  }
-//
-//  es = (struct ext2_super_block *)(((char *)bh->b_data) + offset);
-//  sbi->s_es = es;
-//
-//}
+#define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
+#define FD_DEVICE "/dev/loop0"               /* the floppy disk device */
+
+static unsigned int block_size = 0;        /* block size (to be calculated) */
 
 void dump_layout(char *device_name)
 {
-  FILE *fp = fopen(device_name, "rb");
-  // disclaimer: i don't know the exact layout of ext2 file system, please refer to the documentation or book
-  // suppose the superblock is located at the first 1024 bytes - 2048 bytes (i assume block size is 1024, which may not
-  // be the case! google for how to get block size!)
+//  FILE *fp = fopen(device_name, "rb");
+//  // disclaimer: i don't know the exact layout of ext2 file system, please refer to the documentation or book
+//  // suppose the superblock is located at the first 1024 bytes - 2048 bytes (i assume block size is 1024, which may not
+//  // be the case! google for how to get block size!)
+//
+//  fseek(fp, 1024, SEEK_SET); // offset the file pointer to the right address
+//  char buffer[1024];
+//  if(fread(buffer, 1, 1024, fp) != 1024)
+//    fprintf(stderr, "device file too small, cannot read super block");
+//
+//  // now parse the binary data
+//  // TODO: this might not be the correct struct to cast to, refer to documentation!
+//  struct super_block *super_block_data = (struct super_block *) buffer; // force cast the binary char array to struct super_block
+//  // now read from super_block_data, etc.
+    struct ext2_super_block super;
+    struct ext2_group_desc group;
 
-  fseek(fp, 1024, SEEK_SET); // offset the file pointer to the right address
-  char buffer[1024];
-  if(fread(buffer, 1, 1024, fp) != 1024)
-    fprintf(stderr, "device file too small, cannot read super block");
+    int fd;
 
-  // now parse the binary data
-  // TODO: this might not be the correct struct to cast to, refer to documentation!
-  struct super_block *super_block_data = (struct super_block *) buffer; // force cast the binary char array to struct super_block
-  // now read from super_block_data, etc.
+    /* open floppy device */
 
+    if ((fd = open(FD_DEVICE, O_RDONLY)) < 0) {
+        perror(FD_DEVICE);
+        exit(1);  /* error while opening the floppy device */
+    }
+
+    /* read super-block */
+
+    lseek(fd, BASE_OFFSET, SEEK_SET);
+    read(fd, &super, sizeof(super));
+
+    if (super.s_magic != EXT2_SUPER_MAGIC) {
+        fprintf(stderr, "Not a Ext2 filesystem\n");
+        exit(1);
+    }
+
+    block_size =1024 << super.s_log_block_size;
+
+    /* read group descriptor */
+
+    lseek(fd, BASE_OFFSET + block_size, SEEK_SET);
+    read(fd, &group, sizeof(group));
+    close(fd);
+
+    /* number of inodes per block */
+    unsigned int inodes_per_block = block_size / sizeof(struct ext2_inode);
+
+    /* size in blocks of the inode table */
+    unsigned int itable_blocks = super.s_inodes_per_group / inodes_per_block;
+
+    /* calculate number of block groups on the disk */
+    unsigned int group_count = 1 + (super.s_blocks_count-1) / super.s_blocks_per_group;
+
+    /* calculate size of the group descriptor list in bytes */
+    unsigned int descr_list_size = group_count * sizeof(group);
+    printf("superblock:%u\n"
+           "GDT:%u-%u\n"
+           "reserved GDT:%u-%u\n"
+           "blocks bitmap block: %u\n"
+           "inodes bitmap block: %u\n"
+           "inodes table block : %u-%u\n"
+           "data block:%u-%u\n"
+            ,
+           super.s_first_data_block,
+           super.s_first_data_block + 1, group.bg_block_bitmap - super.s_reserved_gdt_blocks - 1 ,//1 has something wrong
+           group.bg_block_bitmap - super.s_reserved_gdt_blocks, group.bg_block_bitmap - 1,
+           group.bg_block_bitmap,
+           group.bg_inode_bitmap,
+           group.bg_inode_table, group.bg_inode_table + itable_blocks - 1,
+           group.bg_inode_table + itable_blocks, block_size - 1
+    );
+    
 }
 
 

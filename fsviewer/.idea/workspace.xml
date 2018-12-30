@@ -9,10 +9,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7db1028-176b-4f62-bb8c-af673d9f6093" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dump_layout.c" beforeDir="false" afterPath="$PROJECT_DIR$/dump_layout.c" afterDir="false" />
-    </list>
+    <list default="true" id="b7db1028-176b-4f62-bb8c-af673d9f6093" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +49,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dump_layout.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="73" column="16" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="16" />
+            <state relative-caret-position="231">
+              <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
               <folding>
                 <element signature="e#232#309#0" />
               </folding>
@@ -73,7 +70,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
     <option name="width" value="1554" />
@@ -129,12 +126,12 @@
       <updated>1546007380101</updated>
       <workItem from="1546007383534" duration="3155000" />
       <workItem from="1546052325248" duration="1529000" />
-      <workItem from="1546101403130" duration="1962000" />
+      <workItem from="1546101403130" duration="3248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6646000" />
+    <option name="totallyTimeSpent" value="7932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1554" height="1056" extended-state="1" />
@@ -189,8 +186,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dump_layout.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="73" column="16" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="16" />
+        <state relative-caret-position="231">
+          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
           <folding>
             <element signature="e#232#309#0" />
           </folding>
