@@ -60,10 +60,9 @@ int dump_del(char *device)
                 const long i_dtime = (const long)inode.i_dtime;
                 struct tm *tm_time = localtime(&i_dtime);
                 char str_buffer[1024];
-                strftime(str_buffer, sizeof(str_buffer), "%a, %d %b %Y %T %z", tm_time);
+                strftime(str_buffer, sizeof(str_buffer), "%a, %d %b %Y %T UTC%z", tm_time);
 
-                printf("group %d\n",i);
-                printf("deleted inode time:%u\n",inode.i_dtime);
+                printf("group %d\n", group_index);
                 printf("deleted inode time:%s\n",str_buffer);
 
                 delete_num++;
