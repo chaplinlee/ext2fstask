@@ -50,11 +50,11 @@ int dump_layout(char *device)
     int mark = 1;   //visiting mark
 
     // 每个块组中 inode table 所占的块数
-    int block_inodes_per_group = super.s_inodes_per_group*super.s_inode_size / block_size;
+    int block_inodes_per_group = super.s_inodes_per_group * super.s_inode_size / block_size;
 
     // GDT所占的块数
     struct ext2_group_desc group_desc;
-    int GDT_size = sizeof(group_desc)*group_num / block_size + 1;
+    int GDT_size = sizeof(group_desc) * group_num / block_size + 1;
 
     // 依次访问每个块组
     char *start = "start";
