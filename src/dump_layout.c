@@ -51,7 +51,7 @@ int dump_layout(char *device)
 
         // special items (Superblock / GDP / Reserved GDT) may not appear in certain groups
         // this group contains backup superblock
-        if(is_power(group_index, 3) || is_power(group_index, 5) || is_power(group_index, 7))
+        if(group_index == 0 || is_power(group_index, 3) || is_power(group_index, 5) || is_power(group_index, 7))
         {
             printf("| %-17s | %6d | %6d | %6d |\n", "Superblock", block_cursor, block_cursor, 1);
             block_cursor ++;
