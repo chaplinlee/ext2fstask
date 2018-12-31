@@ -6,124 +6,87 @@
 #include <unistd.h>
 #include <ext2fs/ext2_fs.h>
 #include <string.h>
+#include "utils.h"
 
-#define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
-//#define FD_DEVICE "/dev/loop0"               /* the floppy disk device */
 
-static unsigned int block_size = 0;        /* block size (to be calculated) */
+#define BASE_OFFSET 1024 // locates beginning of the super block (first group)
 
-//
-int isPower(int n)
+int dump_layout(char *device)
 {
-    int i;
-    int a[12] = { 0, 1, 3, 5, 7, 9, 25, 27, 49, 81, 125, 243 };
-    for (i = 0; i < 12; i++)
-        if (n == a[i])
-            return 1;
-    return 0;
-}
-
-int main(int argc, char * argv[])
-{
-    char * FD_DEVICE = argv[1];
-
-    struct ext2_super_block super;
-    int fd;
-
-
-    /* read super-block */
-
-    if ((fd = open(FD_DEVICE, O_RDONLY)) < 0) {
-        perror(FD_DEVICE);
-        exit(1);  /* error while opening the floppy device */
+    int fd = -1;
+    // open device
+    if ((fd = open(device, O_RDONLY)) < 0) {
+        fprintf(stderr, "Cannot open device %s", device);
+        return 1;
     }
 
-    /* read super-block */
-
+    // read superblock
+    struct ext2_super_block super;
+    // offset to the superblock
     lseek(fd, BASE_OFFSET, SEEK_SET);
     read(fd, &super, sizeof(super));
     close(fd);
 
-    // is ext2 func
+    // check if it is ext2 filesystem
     if (super.s_magic != EXT2_SUPER_MAGIC) {
         fprintf(stderr, "Not a Ext2 filesystem\n");
-        exit(1);
+        return 1;
     }
-    block_size = 1024 << super.s_log_block_size;
 
-    /*
-    ext2_super_block
-    super.s_blocks_per_group       块组大小（块）
-    super.s_reserved_gdt_blocks    reserved_GDT大小
-    super.s_inodes_per_group       每组节点数
-    super.s_inode_size             节点大小（字节）
-    */
-
+    unsigned int block_size = 1024 << super.s_log_block_size;
     int group_num = (super.s_blocks_count - 1) / super.s_blocks_per_group + 1;
-    struct ext2_inode inode;
+    // inode table size in each group
+    int inode_table_blocks = super.s_inodes_per_group * super.s_inode_size / block_size;
+    // GDT size in each group
+    int GDT_size = sizeof(struct ext2_group_desc) * group_num / block_size + 1;
 
-    int a, b;   //visiting cursor
-    int mark = 1;   //visiting mark
-
-    // 每个块组中 inode table 所占的块数
-    int block_inodes_per_group = super.s_inodes_per_group*super.s_inode_size / block_size;
-
-    // GDT所占的块数
-    struct ext2_group_desc group_desc;
-    int GDT_size = sizeof(group_desc)*group_num / block_size + 1;
-
-    printf("\n dump_layout: \n\n");
-
-    // 依次访问每个块组
-    char *start = "start";
-    char *end = "end";
-    char *lenth = "lenth";
-    char *placeholder = "------";
-    char *table_column[] = {"Group", "Superblock", "GDT", "Reserved GDT",
-                            "Data block bitmap", "Inode bitmap", "Inode table", "Data block"};
-    for (int i = 0; i < group_num; i++)
+    // print out required message
+    for (int group_index = 0; group_index < group_num; group_index++)
     {
-        mark = 1 + i * super.s_blocks_per_group;
-        if (isPower(i) == 1)
+        int block_cursor = group_index * super.s_blocks_per_group + 1;
+
+        // print header
+        printf("| %-5s %-11d | %6s | %6s | %6s |\n", "Group", group_index, "Start", "End", "Length");
+        printf("|%-17s|%6s|%6s|%6s|\n", ":------------------", ":------:", ":------:", ":------:");
+
+        // special items (Superblock / GDP / Reserved GDT) may not appear in certain groups
+        // this group contains backup superblock
+        if(group_index == 0 || is_power(group_index, 3) || is_power(group_index, 5) || is_power(group_index, 7))
         {
-            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0],i, start, end, lenth);
-            a = mark, b = mark + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[1], a, b, 1);
-            a = b + 1, b = a + GDT_size - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[2], a, b, GDT_size);
-            a = b + 1, b = a + super.s_reserved_gdt_blocks - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[3], a, b, super.s_reserved_gdt_blocks);
-            a = b + 1, b = a + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[4], a, b, 1);
-            a = b + 1, b = a + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[5], a, b, 1);
-            a = b + 1, b = a + block_inodes_per_group - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[6], a, b, block_inodes_per_group);
-            a = b + 1, b = mark + super.s_blocks_per_group - 1;
-            if (b > super.s_blocks_count - 1)
-                b = super.s_blocks_count - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[7], a, b, b - a + 1);
+            printf("| %-17s | %6d | %6d | %6d |\n", "Superblock", block_cursor, block_cursor, 1);
+            block_cursor ++;
+            printf("| %-17s | %6d | %6d | %6d |\n", "GDT", block_cursor, block_cursor, GDT_size);
+            block_cursor += GDT_size;
+            printf("| %-17s | %6d | %6d | %6d |\n", "Reserved GDT", block_cursor, block_cursor, super.s_reserved_gdt_blocks);
+            block_cursor += super.s_reserved_gdt_blocks;
         }
         else
         {
-
-            printf("%-5s %-11d:|%6s|%6s|%6s|\n", table_column[0], i, start, end, lenth);
-            for(int j = 1;j < 4;j++)
-                printf("%-17s:|%6s|%6s|%6s|\n", table_column[j], placeholder,placeholder,placeholder);
-
-            a = mark, b = mark + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[4], a, b, 1);
-            a = b + 1, b = a + 1 - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[5], a, b, 1);
-            a = b + 1, b = a + block_inodes_per_group - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[6], a, b, block_inodes_per_group);
-            a = b + 1, b = mark + super.s_blocks_per_group - 1;
-            if (b > super.s_blocks_count - 1)
-                b = super.s_blocks_count - 1;
-            printf("%-17s:|%6d|%6d|%6d|\n", table_column[7], a, b, b - a + 1);
+            printf("| %-17s | %6s | %6s | %6s |\n", "Superblock", "N/A", "N/A", "N/A");
+            printf("| %-17s | %6s | %6s | %6s |\n", "GDT", "N/A", "N/A", "N/A");
+            printf("| %-17s | %6s | %6s | %6s |\n", "Reserved GDT", "N/A", "N/A", "N/A");
         }
+        printf("| %-17s | %6d | %6d | %6d |\n", "Data block bitmap", block_cursor, block_cursor, 1);
+        block_cursor ++;
+        printf("| %-17s | %6d | %6d | %6d |\n", "Inode bitmap", block_cursor, block_cursor, 1);
+        block_cursor ++;
+        printf("| %-17s | %6d | %6d | %6d |\n", "Inode table", block_cursor, block_cursor + inode_table_blocks - 1, inode_table_blocks);
+        block_cursor += inode_table_blocks;
+        int data_block_end = (group_index + 1) * super.s_blocks_per_group;
+        if(data_block_end > super.s_blocks_count - 1)
+            data_block_end = super.s_blocks_count - 1;
+        printf("| %-17s | %6d | %6d | %6d |\n", "Data block", block_cursor, data_block_end, data_block_end - block_cursor + 1);
         printf("\n");
     }
+    return 0;
+}
 
-    exit(0);
+int main(int argc, char **argv)
+{
+    if(argc < 2)
+    {
+        fprintf(stderr, "Not enough argument.\n\nUsage: %s [device]", argv[0]);
+        return 1;
+    }
+    return dump_layout(argv[1]);
 }

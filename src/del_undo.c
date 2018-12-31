@@ -6,21 +6,11 @@
 #include <unistd.h>
 #include <ext2fs/ext2_fs.h>
 #include <string.h>
+#include "utils.h"
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
-#define FD_DEVICE "/dev/loop0"               /* the floppy disk device */
 
 static unsigned int block_size = 0;        /* block size (to be calculated) */
-
-int isPower(int n)
-{
-  int i;
-  int a[12] = { 0, 1, 3, 9, 27, 81, 243, 5, 25, 125, 7, 49 };
-  for (i = 0; i < 12; i++)
-    if (n == a[i])
-      return 1;
-  return 0;
-}
 
 int main(int argc, char **argv)
 {
@@ -49,7 +39,8 @@ int main(int argc, char **argv)
 
     block_size = 1024 << super.s_log_block_size;
 
-    for(i = 0; i < group_num; i++)
+    /*
+    for(int i = 0; i < group_num; i++)
     {
         if (i == 0)
             inode_OFFSET = (1 + 1 + 2 + super.s_reserved_gdt_blocks + 1 + 1) * block_size;//268288
@@ -62,5 +53,5 @@ int main(int argc, char **argv)
 
 
     }
-
+    */
 }
