@@ -41,6 +41,8 @@ int dump_del(char *device)
     int delete_num = 0, check_num = 0;
 
     // iterate over the group and search inode table
+    printf("| %-8s | %-35s |\n", "Group #", "Deleted Time");
+    printf("|%8s|%35s|\n", ":--------:", ":-----------------------------------:");
     for (int group_index = 0; group_index < group_num; group_index++)
     {
         int inode_offset = 0;
@@ -63,9 +65,7 @@ int dump_del(char *device)
                 struct tm *tm_time = localtime(&i_dtime);
                 char str_buffer[1024];
                 strftime(str_buffer, sizeof(str_buffer), "%a, %d %b %Y %T UTC%z", tm_time);
-
-                printf("group %d\n", group_index);
-                printf("deleted inode time:%s\n",str_buffer);
+                printf("| %-8d | %-35s |\n", group_index, str_buffer);
                 delete_num++;
             }
             check_num++;
