@@ -41,8 +41,8 @@ int dump_del(char *device)
     int delete_num = 0, check_num = 0;
 
     // iterate over the group and search inode table
-    printf("| %-8s | %-35s |\n", "Group #", "Deleted Time");
-    printf("|%8s|%35s|\n", ":--------:", ":-----------------------------------:");
+    printf("| %-8s | %-8s | %-35s |\n", "Group #", "INode #", "Deleted Time");
+    printf("|%8s|%8s|%35s|\n", ":--------:", ":--------:", ":-----------------------------------:");
     for (int group_index = 0; group_index < group_num; group_index++)
     {
         int inode_offset = 0;
