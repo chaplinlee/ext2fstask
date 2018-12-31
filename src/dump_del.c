@@ -65,7 +65,10 @@ int dump_del(char *device)
                 struct tm *tm_time = localtime(&i_dtime);
                 char str_buffer[128];
                 strftime(str_buffer, sizeof(str_buffer), "%a, %d %b %Y %T UTC%z", tm_time);
-                printf("| %-8d | %-35s |\n", group_index, str_buffer);
+                printf("| %-8d | %-8ld | %-35s |\n",
+                        group_index,
+                       group_index * inode_table_blocks * (block_size / sizeof(inode)) + inode_index,
+                        str_buffer);
                 delete_num++;
             }
             check_num++;
