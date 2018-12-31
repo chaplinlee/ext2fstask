@@ -39,39 +39,42 @@ int dump_del(char *device)
 
     struct ext2_inode inode;
     int delete_num = 0, check_num = 0;
-    int inode_offset = 0;
 
     // iterate over the group and search inode table
+    printf("| %-8s | %-8s | %-35s |\n", "Group #", "INode #", "Deleted Time");
+    printf("|%8s|%8s|%35s|\n", ":--------:", ":--------:", ":-----------------------------------:");
     for (int group_index = 0; group_index < group_num; group_index++)
     {
+        int inode_offset = 0;
+
         // find offset to inode table
-        if (group_index == 0)
-            inode_offset = (1 + 1 + 2 + super.s_reserved_gdt_blocks + 1 + 1) * block_size; //268288
-        else if (is_power(group_index, 3) || is_power(group_index, 5) || is_power(group_index, 7))
-            inode_offset = ((super.s_blocks_per_group * group_index + 1) + (1 + 2 + super.s_reserved_gdt_blocks + 1 + 1)) * block_size;//268288
+        int start = group_index * super.s_blocks_per_group + 1;
+        if(group_index == 0 || is_power(group_index, 3) || is_power(group_index, 5) || is_power(group_index, 7))
+            inode_offset = start + 2 + super.s_reserved_gdt_blocks + 2;
         else
-            inode_offset = ((super.s_blocks_per_group * group_index + 1) + (1 + 1)) * block_size;
+            inode_offset = start + 2;
 
         // read inode table
-        lseek(fd, inode_offset, SEEK_SET);
-        for (int inode_index = 0; inode_index < inode_table_blocks; inode_index++)
+        lseek(fd, inode_offset * block_size, SEEK_SET);
+        for (int inode_index = 0; inode_index < inode_table_blocks * (block_size / sizeof(inode)); inode_index++)
         {
             read(fd, &inode, sizeof(inode));
             if (inode.i_dtime != 0)
             {
                 const long i_dtime = (const long)inode.i_dtime;
                 struct tm *tm_time = localtime(&i_dtime);
-                char str_buffer[1024];
+                char str_buffer[128];
                 strftime(str_buffer, sizeof(str_buffer), "%a, %d %b %Y %T UTC%z", tm_time);
-
-                printf("group %d\n", group_index);
-                printf("deleted inode time:%s\n",str_buffer);
+                printf("| %-8d | %-8ld | %-35s |\n",
+                        group_index,
+                       group_index * inode_table_blocks * (block_size / sizeof(inode)) + inode_index,
+                        str_buffer);
                 delete_num++;
             }
             check_num++;
         }
     }
-    printf("Total checked: %d\nTotal deleted: %d\n", check_num, delete_num);
+    printf("Total checked: %d\tTotal deleted: %d\n", check_num, delete_num);
     close(fd);
     return 0;
 }
