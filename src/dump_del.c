@@ -63,7 +63,7 @@ int dump_del(char *device)
             {
                 const long i_dtime = (const long)inode.i_dtime;
                 struct tm *tm_time = localtime(&i_dtime);
-                char str_buffer[1024];
+                char str_buffer[128];
                 strftime(str_buffer, sizeof(str_buffer), "%a, %d %b %Y %T UTC%z", tm_time);
                 printf("| %-8d | %-35s |\n", group_index, str_buffer);
                 delete_num++;
