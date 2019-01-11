@@ -9,6 +9,7 @@
 #include "utils.h"
 
 #define BASE_OFFSET 1024                   /* locates beginning of the super block (first group) */
+#define ERROR_TIME 0xffffffff
 
 int dump_del(char *device)
 {
@@ -59,7 +60,7 @@ int dump_del(char *device)
         for (int inode_index = 0; inode_index < inode_table_blocks * (block_size / sizeof(inode)); inode_index++)
         {
             read(fd, &inode, sizeof(inode));
-            if (inode.i_dtime != 0)
+            if ((inode.i_dtime != 0)&&(inode.i_dtime != ERROR_TIME))
             {
                 const long i_dtime = (const long)inode.i_dtime;
                 struct tm *tm_time = localtime(&i_dtime);
@@ -69,7 +70,6 @@ int dump_del(char *device)
                         group_index,
                        group_index * inode_table_blocks * (block_size / sizeof(inode)) + inode_index,
                         str_buffer, inode.i_size);
-                delete_num++;
             }
             check_num++;
         }
